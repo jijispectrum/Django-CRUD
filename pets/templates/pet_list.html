@@ -1,0 +1,22 @@
+<!-- pets/templates/pets/pet_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+</head>
+<body>
+    <h1>List of Pets</h1>
+    
+    <!-- Display the list of pets -->
+    <ul>
+        {% for pet in pets %}
+            <li>{{ pet.name }} - {{ pet.species }} - {{ pet.age }} years old</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'add_pet' %}">Add a New Pet</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- pets/templates/pets/add_pet.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pet</title>
+</head>
+<body>
+    <h1>Add a New Pet</h1>
+
+    <!-- Check if the form is valid and show success message -->
+    {% if form.errors %}
+        <p style="color:red;">Please fix the errors below.</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Render the form fields -->
+        {{ form.as_p }}
+
+        <!-- Submit button -->
+        <button type="submit">Add Pet</button>
+    </form>
+
+    <br>
+    <a href="{% url 'pet_list' %}">Back to pet list</a>
+</body>
+</html>
